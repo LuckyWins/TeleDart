@@ -294,7 +294,7 @@ class Telegram {
     var multiPartFiles = <MultipartFile>[];
     
     if (photo is Uint8List) {
-      multiPartFiles.add(MultipartFile.fromBytes('photo', value));
+      multiPartFiles.add(MultipartFile.fromBytes('photo', photo));
     } else if (photo is io.File) {
       multiPartFiles.add(HttpClient.toMultiPartFile(photo, 'photo'));
     } else if (photo is String) {
